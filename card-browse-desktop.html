@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Get a first impression with card browsing. See your potential match's name, age, Sun, Moon, and Ascendant. You can also view their condensed profile.">
+    <meta itemprop="image" content="https://adamdolson.github.io/trinedatinghomemobile/item-prop.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Card Browse - Trine Dating - Meet People and Make Connections with Astrology">
+    <meta property="og:description" content="Get a first impression with card browsing. See your potential match's name, age, Sun, Moon, and Ascendant. You can also view their condensed profile.">
+    <meta property="og:site_name" content="Trine Dating">
+    <meta property="og:url" content="https://adamdolson.github.io/trinedatinghomedesktop/card-browse.html">
+    <meta property="og:image" content="https://adamdolson.github.io/trinedatinghomemobile/item-prop.png">
+    <title>About Card Browse - Trine Dating - Meet People and Make Connections with Astrology</title>
+    <link rel="icon" href="favicon-logo.png">
+
+    <style media="screen">
+    /* Body formatting. */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(#fffde6, #ffffff, #ffffff, #ffffff, #fffde6);
+      background-repeat: no-repeat;
+    }
+    /* Font. */
+    @font-face {
+      font-family: 'Bahnschrift';
+      src: url('Bahnschrift.eot');
+      src: url('Bahnschrift.eot?#iefix') format('embedded-opentype'),
+      url('Bahnschrift.woff2') format('woff2'),
+      url('Bahnschrift.woff') format('woff'),
+      url('Bahnschrift.ttf') format('truetype'),
+      url('Bahnschrift.svg#Bahnschrift') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Roboto';
+      src: url('Roboto-Regular.eot');
+      src: url('Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+      url('Roboto-Regular.woff2') format('woff2'),
+      url('Roboto-Regular.woff') format('woff'),
+      url('Roboto-Regular.ttf') format('truetype'),
+      url('Roboto-Regular.svg#Roboto-Regular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Roboto Light';
+      src: url('Roboto-Light.eot');
+      src: url('Roboto-Light.eot?#iefix') format('embedded-opentype'),
+      url('Roboto-Light.woff2') format('woff2'),
+      url('Roboto-Light.woff') format('woff'),
+      url('Roboto-Light.ttf') format('truetype'),
+      url('Roboto-Light.svg#Roboto-Light') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    /* Top navigation. */
+    .top-navigation {
+      height: 10vh;
+      position: fixed;
+      width: 100%;
+      background-image: linear-gradient(to right, #ff3300, #ff7700);
+      display: flex;
+      box-shadow: 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%), 0px 2px 4px -1px rgb(0 0 0 / 20%);
+      z-index: 1;
+    }
+    .top-navigation-banner-logo {
+      height: 100%;
+      width: 20%;
+      background-color: transparent;
+    }
+    .top-navigation-banner-logo img {
+      height: 100%;
+    }
+    .top-navigation-links {
+      height: 100%;
+      width: 80%;
+      background-color: transparent;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      text-align: center;
+      font-family: Bahnschrift;
+      font-size: 1.3vw;
+      font-weight: bold;
+    }
+    .top-navigation-links a {
+      text-decoration: none;
+      color: #ffffff;
+      padding-right: 0.8vw;
+      padding-left: 0.6vw;
+    }
+    .top-navigation-links a:hover {
+      text-shadow: 0px 0px 15px #ffffff;
+    }
+    .top-navigation-links button {
+      display: none;
+    }
+    .top-spacer {
+      height: 10vh;
+      width: 100%;
+      background-color: transparent;
+    }
+    /* Card browse section. */
+    .card-browse {
+      height: 90vh;
+      width: 100%;
+      background-color: transparent;
+      display: flex;
+    }
+    .card-browse-1 {
+      height: 100%;
+      width: 4%;
+    }
+    .card-browse-2 {
+      height: 100%;
+      width: 91%;
+      background-color: transparent;
+      display: flex;
+    }
+    .card-browse-2-1 {
+      height: 100%;
+      width: 20%;
+    }
+    .card-browse-2-1-1 {
+      height: 10%;
+      width: 100%;
+    }
+    .card-browse-2-1-2 {
+      height: 76%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .card-browse-2-1-2 img {
+      width: 95%;
+      cursor: pointer;
+    }
+    .card-browse-2-1-3 {
+      height: 14%;
+      width: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .card-browse-2-1-3-1 {
+      height: 0.888vw;
+      width: 0.888vw;
+      background-image: linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6);
+      border-radius: 50%;
+      box-shadow: 0px 0px 2px #000000;
+      cursor: pointer;
+    }
+    .card-browse-2-1-3-2 {
+      height: 0.777vw;
+      width: 0.777vw;
+      background-color: transparent;
+    }
+    .card-browse-2-2 {
+      height: 100%;
+      width: 20%;
+    }
+    .card-browse-2-2-1 {
+      height: 5%;
+      width: 100%;
+    }
+    .card-browse-2-2-2 {
+      height: 85%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .card-browse-2-2-2 img {
+      width: 95%;
+      cursor: pointer;
+    }
+    .card-browse-2-2-3 {
+      height: 10%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-browse-2-3 {
+      height: 100%;
+      width: 20%;
+    }
+    .card-browse-2-3-1 {
+      height: 10%;
+      width: 100%;
+    }
+    .card-browse-2-3-2 {
+      height: 76%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .card-browse-2-3-2 img {
+      width: 95%;
+      cursor: pointer;
+    }
+    .card-browse-2-3-3 {
+      height: 14%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .card-browse-2-4 {
+      height: 100%;
+      width: 40%;
+    }
+    .card-browse-2-4-1 {
+      height: 15%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Bahnschrift';
+      font-size: 3.3vw;
+      font-weight: bold;
+      text-align: center;
+      color: #000000;
+    }
+    .card-browse-2-4-1 p {
+      padding-top: 3.3vw;
+    }
+    .card-browse-2-4-2 {
+      height: 15%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Roboto';
+      font-size: 1.3vw;
+      font-weight: bold;
+      text-align: center;
+      color: #000000;
+    }
+    .card-browse-2-4-3 {
+      height: 13%;
+      width: 100%;
+      display: flex;
+    }
+    .card-browse-2-4-3-1 {
+      height: 100%;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-browse-2-4-3-1 img {
+      height: 88%;
+    }
+    .card-browse-2-4-3-2 {
+      height: 100%;
+      width: 80%;
+      font-family: 'Roboto Light';
+      font-size: 1.3vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .card-browse-2-4-4 {
+      height: 13%;
+      width: 100%;
+      display: flex;
+    }
+    .card-browse-2-4-4-1 {
+      height: 100%;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-browse-2-4-4-1 img {
+      height: 88%;
+    }
+    .card-browse-2-4-4-2 {
+      height: 100%;
+      width: 80%;
+      font-family: 'Roboto Light';
+      font-size: 1.3vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .card-browse-2-4-5 {
+      height: 13%;
+      width: 100%;
+      display: flex;
+    }
+    .card-browse-2-4-5-1 {
+      height: 100%;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-browse-2-4-5-1 img {
+      height: 88%;
+    }
+    .card-browse-2-4-5-2 {
+      height: 100%;
+      width: 80%;
+      font-family: 'Roboto Light';
+      font-size: 1.3vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .card-browse-2-4-6 {
+      height: 13%;
+      width: 100%;
+      display: flex;
+    }
+    .card-browse-2-4-6-1 {
+      height: 100%;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-browse-2-4-6-1 img {
+      height: 88%;
+    }
+    .card-browse-2-4-6-2 {
+      height: 100%;
+      width: 80%;
+      font-family: 'Roboto Light';
+      font-size: 1.3vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .card-browse-2-4-7 {
+      height: 13%;
+      width: 100%;
+      display: flex;
+    }
+    .card-browse-2-4-7-1 {
+      height: 100%;
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-browse-2-4-7-1 img {
+      height: 88%;
+    }
+    .card-browse-2-4-7-2 {
+      height: 100%;
+      width: 80%;
+      font-family: 'Roboto Light';
+      font-size: 1.3vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .card-browse-3 {
+      height: 100%;
+      width: 5%;
+    }
+    /* Spacer. */
+    .spacer {
+      height: 6vh;
+      width: 100%;
+    }
+    /* Download the app. */
+    .google-play-store-app-store {
+      height: 18vh;
+      width: 100%;
+      display: flex;
+    }
+    .google-play-store-app-store-1 {
+      height: 100%;
+      width: 10%;
+    }
+    .google-play-store-app-store-2 {
+      height: 100%;
+      width: 80%;
+      display: flex;
+    }
+    .google-play-store-app-store-2-1 {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: 'Bahnschrift';
+      font-size: 1.3vw;
+      font-weight: bold;
+    }
+    .google-play-store-app-store-2-2 {
+      height: 100%;
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .google-play-store-app-store-2-2 img {
+      width: 77%;
+      cursor: pointer;
+    }
+    /* Share, Newsletter, Network. */
+    .share-newsletter-network {
+      height: 18vh;
+      width: 100%;
+      display: flex;
+      font-family: 'Roboto Light';
+      font-size: 1.5vw;
+      font-weight: bold;
+    }
+    .share-newsletter-network a {
+      text-decoration: none;
+      color: #000000;
+    }
+    .share-newsletter-network a:hover {
+      color: #c0c0c0;
+      font-size: 1.6vw;
+    }
+    .share-newsletter-network img {
+      height: 60%;
+      padding-left: 0.6vw;
+    }
+    .share {
+      height: 100%;
+      width: 33.3%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .newsletter {
+      height: 100%;
+      width: 33.4%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .network {
+      height: 100%;
+      width: 33.3%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Zodiacal Wheel section. */
+    .zodiacal-wheel {
+      height: 49vh;
+      width: 100%;
+      border-top: solid 0.66vh #ff3300;
+    }
+    .zodiacal-wheel-1 {
+      height: 5%;
+      width: 100%;
+    }
+    .zodiacal-wheel-2 {
+      height: 90%;
+      width: 100%;
+      display: flex;
+    }
+    .zodiacal-wheel-2 img {
+      height: 120%;
+    }
+    .zodiacal-wheel-2-1 {
+      height: 100%;
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("ascendant-icon.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 15%;
+    }
+    .the-cycles-of-time {
+      animation-name: spin, dontspin;
+      animation-duration: 24000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      z-index: 0;
+    }
+    @keyframes spin {
+      from {transform:rotate(0deg);}
+      to {transform:rotate(360deg);}
+    }
+    .zodiacal-wheel-2-2 {
+      height: 100%;
+      width: 75%;
+    }
+    .zodiacal-wheel-2-2-1 {
+      height: 20%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Roboto Light';
+      font-size: 1.5vw;
+      font-weight: bold;
+    }
+    .zodiacal-wheel-2-2-2 {
+      height: 16%;
+      width: 100%;
+      display: flex;
+      font-family: 'Roboto Light';
+      font-size: 1.2vw;
+    }
+    .zodiacal-wheel-2-2-2 img {
+      height: 60%;
+      padding-right: 0.6vw;
+    }
+    .zodiacal-wheel-2-2-2-1 {
+      height: 100%;
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .zodiacal-wheel-3 {
+      height: 5%;
+      width: 100%;
+    }
+    /* Bottom Navigation. */
+    .bottom-navigation {
+      height: 30vh;
+      width: 100%;
+      display: flex;
+      border-top: solid 0.66vh #ff3300;
+    }
+    .bottom-navigation-1 {
+      height: 100%;
+      width: 20%;
+    }
+    .bottom-navigation-2 {
+      height: 12.5%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: 'Roboto Light';
+      font-size: 1.3vw;
+    }
+    .bottom-navigation-2 a {
+      padding-left: 2.2vw;
+      text-decoration: none;
+      color: #000000;
+    }
+    .bottom-navigation-2 a:hover {
+      color: #ff3300;
+    }
+    /* Pre-Registration and Full Release countdowns. */
+    .countdowns {
+      height: 8vh;
+      width: 100%;
+      color: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Roboto Light';
+      font-size: 1.3vw;
+      border-top: solid 0.66vh #ff3300;
+    }
+    .countdowns p {
+      padding-left: 1.5vw;
+      padding-right: 1.5vw;
+    }
+    /* Bottom Social Links. */
+    .social-links {
+      height: 8vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-links img {
+      height: 77%;
+      padding-left: 0.6vw;
+      padding-right: 0.6vw;
+      cursor: pointer;
+    }
+    .social-links img:hover {
+      height: 88%;
+    }
+    /* Copyright. */
+    .copyright {
+      height: 7vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Roboto Light';
+      font-size: 1.1vw;
+    }
+    /* Slideshow dots. */
+    </style>
+  </head>
+  <body>
+    <div class="top-navigation">
+      <div class="top-navigation-banner-logo">
+        <a href="index.html"> <img src="trine-banner-logo.png" alt="Banner Logo for Trine Dating"> </a>
+      </div>
+      <div class="top-navigation-links">
+        <a href="our-app.html">Our App</a>
+        <a href="about.html" style="text-shadow: 0px 0px 15px #ffffff;">About</a>
+        <a href="the-synastry-compendium.html">The Synastry Compendium</a>
+        <a href="memberships.html">Memberships</a>
+        <a href="charts.html">Charts</a>
+        <a href="reports.html">Reports</a>
+        <a href="media.html">Media</a>
+        <a href="popular-astrology.html">Popular Astrology</a>
+        <a href="shop.html" style="display:none;">Shop</a>
+        <a href="account.html">Account</a>
+      </div>
+    </div>
+    <div class="top-spacer">
+    </div>
+    <div class="card-browse">
+      <div class="card-browse-1">
+
+      </div>
+      <div class="card-browse-2">
+        <div class="card-browse-2-1">
+          <div class="card-browse-2-1-1">
+
+          </div>
+          <div class="card-browse-2-1-2">
+            <img src="victoria-gemini-woman-card-browse-iphone.png" alt="Victoria,
+            Gemini Woman Card Browse Concept for iPhone" style="display:flex;"
+            onclick="cardBrowseFunction()" id="cbimage1">
+            <img src="ricky-scorpio-man-card-browse-iphone.png" alt="Ricky, Scorpio
+            Man Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction2()" id="cbimage2">
+            <img src="sandra-leo-woman-card-browse-iphone.png" alt="Sandra, Leo Woman
+            Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction5()" id="cbimage3">
+            <img src="alex-pisces-man-card-browse-iphone.png" alt="Alex, Pisces Man
+            Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction8()" id="cbimage4">
+            <img src="heather-pisces-woman-card-browse-iphone.png" alt="Heather, Pisces
+            Woman Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction11()" id="cbimage5">
+            <img src="jared-gemini-man-card-browse-iphone.png" alt="Jared, Gemini
+            Man Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction14()" id="cbimage6">
+            <img src="isabel-aquarius-woman-card-browse-iphone.png" alt="Isabel, Aquarius
+            Woman Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction17()" id="cbimage7">
+            <img src="jack-aries-man-card-browse-iphone.png" alt="Jack, Aries Man
+            Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction20()" id="cbimage8">
+          </div>
+          <div class="card-browse-2-1-3">
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi1" style="background-image: linear-gradient(to right, #ff3300, #ff7700);"
+            onclick="cardBrowseFunctionAlternate1()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi2" onclick="cardBrowseFunctionAlternate2()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi3" onclick="cardBrowseFunctionAlternate3()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi4" onclick="cardBrowseFunctionAlternate4()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi5" onclick="cardBrowseFunctionAlternate5()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi6" onclick="cardBrowseFunctionAlternate6()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi7" onclick="cardBrowseFunctionAlternate7()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi8" onclick="cardBrowseFunctionAlternate8()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+          </div>
+        </div>
+        <div class="card-browse-2-2">
+          <div class="card-browse-2-2-1">
+
+          </div>
+          <div class="card-browse-2-2-2">
+            <img src="robert-taurus-man-card-browse-iphone.png" alt="Robert, Taurus
+            Man Card Browse Concept for iPhone" style="display:flex;"
+            onclick="cardBrowseFunction0()" id="cbimage9">
+            <img src="sophie-sagittarius-woman-card-browse-iphone.png" alt="Sophie,
+            Sagittarius Woman Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction3()" id="cbimage10">
+            <img src="andrew-sagittarius-man-card-browse-iphone.png" alt="Andrew,
+            Sagittarius Man Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction6()" id="cbimage11">
+            <img src="ida-taurus-woman-card-browse-iphone.png" alt="Ida, Taurus Woman
+            Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction9()" id="cbimage12">
+            <img src="george-cancer-man-card-browse-iphone.png" alt="George, Cancer Man
+            Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction12()" id="cbimage13">
+            <img src="irina-virgo-woman-card-browse-iphone.png" alt="Irina, Virgo
+            Woman Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction15()" id="cbimage14">
+            <img src="dave-virgo-man-card-browse-iphone.png" alt="Dave, Virgo Man
+            Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction18()" id="cbimage15">
+            <img src="emily-libra-woman-card-browse-iphone.png" alt="Emily, Libra
+            Woman Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction21()" id="cbimage16">
+          </div>
+          <div class="card-browse-2-2-3">
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi9" style="background-image: linear-gradient(to right, #ff3300, #ff7700);"
+            onclick="cardBrowseFunctionAlternate9()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi10" onclick="cardBrowseFunctionAlternate10()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi11" onclick="cardBrowseFunctionAlternate11()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi12" onclick="cardBrowseFunctionAlternate12()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi13" onclick="cardBrowseFunctionAlternate13()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi14" onclick="cardBrowseFunctionAlternate14()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi15" onclick="cardBrowseFunctionAlternate15()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi16" onclick="cardBrowseFunctionAlternate16()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+          </div>
+        </div>
+        <div class="card-browse-2-3">
+          <div class="card-browse-2-3-1">
+
+          </div>
+          <div class="card-browse-2-3-2">
+            <img src="andrea-aries-woman-card-browse-iphone.png" alt="Andrea, Aries
+            Woman Card Browse Concept for iPhone" style="display:flex;"
+            onclick="cardBrowseFunction1()" id="cbimage17">
+            <img src="pablo-libra-man-card-browse-iphone.png" alt="Pablo, Libra Man
+            Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction4()" id="cbimage18">
+            <img src="diana-cancer-woman-card-browse-iphone.png" alt="Diana, Cancer
+            Woman Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction7()" id="cbimage19">
+            <img src="nick-aquarius-man-card-browse-iphone.png" alt="Nick, Aquarius
+            Man Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction10()" id="cbimage20">
+            <img src="anya-capricorn-woman-card-browse-iphone.png" alt="Anya, Capricorn
+            Woman Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction13()" id="cbimage21">
+            <img src="kyle-leo-man-card-browse-iphone.png" alt="Kyle, Leo Man Card
+            Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction16()" id="cbimage22">
+            <img src="anna-scorpio-woman-card-browse-iphone.png" alt="Anna, Scorpio
+            Woman Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction19()" id="cbimage23">
+            <img src="dogu-capricorn-man-card-browse-iphone.png" alt="Dogu, Capricorn
+            Man Card Browse Concept for iPhone" style="display:none;"
+            onclick="cardBrowseFunction22()" id="cbimage24">
+          </div>
+          <div class="card-browse-2-3-3">
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi17" style="background-image: linear-gradient(to right, #ff3300, #ff7700);"
+            onclick="cardBrowseFunctionAlternate17()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi18" onclick="cardBrowseFunctionAlternate18()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi19" onclick="cardBrowseFunctionAlternate19()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi20" onclick="cardBrowseFunctionAlternate20()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi21" onclick="cardBrowseFunctionAlternate21()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi22" onclick="cardBrowseFunctionAlternate22()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi23" onclick="cardBrowseFunctionAlternate23()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+            <div class="card-browse-2-1-3-1" id="cbi24" onclick="cardBrowseFunctionAlternate24()">
+
+            </div>
+            <div class="card-browse-2-1-3-2">
+
+            </div>
+          </div>
+        </div>
+        <div class="card-browse-2-4">
+          <div class="card-browse-2-4-1">
+            <p>Card Browse</p>
+          </div>
+          <div class="card-browse-2-4-2">
+            <p>Get a first impression with card browsing. See your<br>potential match's name, age, Sun,
+            Moon, and Ascendant.</p>
+          </div>
+          <div class="card-browse-2-4-3">
+            <div class="card-browse-2-4-3-1">
+              <img src="venus-button.png" alt="">
+            </div>
+            <div class="card-browse-2-4-3-2">
+              <p>Take a closer look at your compatibility using our affinity system
+              and divine your shared harmony.</p>
+            </div>
+          </div>
+          <div class="card-browse-2-4-4">
+            <div class="card-browse-2-4-4-1">
+              <img src="love-button.png" alt="">
+            </div>
+            <div class="card-browse-2-4-4-2">
+              <p>Send love to show your interest.</p>
+            </div>
+          </div>
+          <div class="card-browse-2-4-5">
+            <div class="card-browse-2-4-5-1">
+              <img src="exalt-button.png" alt="">
+            </div>
+            <div class="card-browse-2-4-5-2">
+              <p>Use one of your limited exaltations to show someone how special they are.</p>
+            </div>
+          </div>
+          <div class="card-browse-2-4-6">
+            <div class="card-browse-2-4-6-1">
+              <img src="message-button.png" alt="">
+            </div>
+            <div class="card-browse-2-4-6-2">
+              <p>Send a message, start communicating, and get to know the person behind
+              the chart.</p>
+            </div>
+          </div>
+          <div class="card-browse-2-4-7">
+            <div class="card-browse-2-4-7-1">
+              <img src="nope-button.png" alt="">
+            </div>
+            <div class="card-browse-2-4-7-2">
+              <p>Let us know you're not interested.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-browse-3">
+
+      </div>
+    </div>
+    <div class="spacer">
+
+    </div>
+    <div class="google-play-store-app-store">
+      <div class="google-play-store-app-store-1">
+
+      </div>
+      <div class="google-play-store-app-store-2">
+        <div class="google-play-store-app-store-2-1">
+          <p>START CREATING MORE CONSCIOUS CONNECTIONS<br>DOWNLOAD THE TRINE DATING APP FOR ANDROID OR iOS</p>
+        </div>
+        <div class="google-play-store-app-store-2-2">
+          <img src="google-play-store-badge.png" alt="" onclick="googlePlayStoreNavigation()">
+        </div>
+        <div class="google-play-store-app-store-2-2">
+          <img src="app-store-badge.png" alt="" onclick="appStoreNavigation()">
+        </div>
+      </div>
+      <div class="google-play-store-app-store-1">
+
+      </div>
+    </div>
+    <div class="spacer">
+
+    </div>
+    <div class="share-newsletter-network">
+      <div class="share">
+        <a href="share.html">Share with Friends</a>
+        <img src="share-symbol.png" alt="">
+      </div>
+      <div class="newsletter">
+        <a href="newsletter.html">Subscribe to our Newsletter</a>
+        <img src="newsletter-symbol.png" alt="">
+      </div>
+      <div class="network">
+        <a href="network.html">The Trine Network</a>
+        <img src="network-symbol.png" alt="">
+      </div>
+    </div>
+    <div class="zodiacal-wheel">
+      <div class="zodiacal-wheel-1">
+
+      </div>
+      <div class="zodiacal-wheel-2">
+        <div class="zodiacal-wheel-2-1">
+          <img src="zodiacal-wheel-shadow.png" alt="" class="the-cycles-of-time">
+        </div>
+        <div class="zodiacal-wheel-2-2">
+          <div class="zodiacal-wheel-2-2-1">
+            <p>Current Energies at a Glance</p>
+          </div>
+          <div class="zodiacal-wheel-2-2-2">
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="sun-symbol-shadow.png" alt="">
+              <p>Sun in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="moon-symbol-shadow.png" alt="">
+              <p>Moon in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="mercury-symbol-shadow.png" alt="">
+              <p>Mercury in 0°0' Sign</p>
+            </div>
+          </div>
+          <div class="zodiacal-wheel-2-2-2">
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="venus-symbol-shadow.png" alt="">
+              <p>Venus in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="north-node-symbol-shadow.png" alt="">
+              <p>North Node in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="south-node-symbol-shadow.png" alt="">
+              <p>South Node in 0°0' Sign</p>
+            </div>
+          </div>
+          <div class="zodiacal-wheel-2-2-2">
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="lilith-symbol-shadow.png" alt="">
+              <p>Lilith in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="mars-symbol-shadow.png" alt="">
+              <p>Mars in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="jupiter-symbol-shadow.png" alt="">
+              <p>Jupiter in 0°0' Sign</p>
+            </div>
+          </div>
+          <div class="zodiacal-wheel-2-2-2">
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="saturn-symbol-shadow.png" alt="">
+              <p>Saturn in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="chiron-symbol-shadow.png" alt="">
+              <p>Chiron in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="uranus-symbol-shadow.png" alt="">
+              <p>Uranus in 0°0' Sign</p>
+            </div>
+          </div>
+          <div class="zodiacal-wheel-2-2-2">
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="neptune-symbol-shadow.png" alt="">
+              <p>Neptune in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="pluto-symbol-shadow.png" alt="">
+              <p>Pluto in 0°0' Sign</p>
+            </div>
+            <div class="zodiacal-wheel-2-2-2-1">
+              <img src="planet-x-symbol-shadow.png" alt="">
+              <p>Where are you Planet X?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="zodiacal-wheel-3">
+
+      </div>
+    </div>
+    <div class="bottom-navigation">
+      <div class="bottom-navigation-1">
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="safety-and-security.html" style="font-size: 1.4vw; font-weight: bold;">Safety and Security</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="community-guidelines.html">Community Guidelines</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="safe-use.html">Safe Use</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="secure-use.html">Secure Use</a>
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+      </div>
+      <div class="bottom-navigation-1">
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="legal.html" style="font-size: 1.4vw; font-weight: bold;">Legal</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="cookies-policy.html">Cookies Policy</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="intellectual-property.html">Intellectual Property</a>
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+      </div>
+      <div class="bottom-navigation-1">
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="corporate.html" style="font-size: 1.4vw; font-weight: bold;">Corporate</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="our-team.html">Our Team</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="career-opportunities.html">Career Opportunities</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="investment-inquiries.html">Investment Inquiries</a>
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+      </div>
+      <div class="bottom-navigation-1">
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="social-links.html" style="font-size: 1.4vw; font-weight: bold;">Social Links</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="instagram.html">Instagram</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="twitter.html">Twitter</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="facebook.html">Facebook</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="tumblr.html">Tumblr</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="pinterest.html">Pinterest</a>
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+      </div>
+      <div class="bottom-navigation-1">
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="support.html" style="font-size: 1.4vw; font-weight: bold;">Support</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="FAQ.html">FAQ</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="contact-support.html">Contact Support</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="general-inquiries.html">General Inquiries</a>
+        </div>
+        <div class="bottom-navigation-2">
+          <a href="feedback-and-suggestions.html">Feedback and Suggestions</a>
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+        <div class="bottom-navigation-2">
+
+        </div>
+      </div>
+    </div>
+    <div class="countdowns">
+      <p>Pre-registration links available in <span id="preRegistrationCountDown"></span></p>
+      <p>Full release in <span id="fullReleaseCountDown"></span></p>
+    </div>
+    <div class="social-links">
+      <img src="custom-instagram-icon.png" alt="" onclick="instagramNavigation()">
+      <img src="custom-twitter-icon.png" alt="" onclick="twitterNavigation()">
+      <img src="custom-facebook-icon.png" alt="" onclick="facebookNavigation()">
+      <img src="custom-tumblr-icon.png" alt="" onclick="tumblrNavigation()">
+      <img src="custom-pinterest-icon.png" alt="" onclick="pinterestNavigation()">
+    </div>
+    <div class="copyright">
+      <p>© 2022 Venusian Media Group Ltd., LLC, All Rights Reserved</p>
+    </div>
+  </body>
+  <script type="text/javascript">
+  function cardBrowseFunction() {
+    document.getElementById("cbimage1").style.display = "none";
+    document.getElementById("cbimage2").style.display = "flex";
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction0() {
+    document.getElementById("cbimage9").style.display = "none";
+    document.getElementById("cbimage10").style.display = "flex";
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction1() {
+    document.getElementById("cbimage17").style.display = "none";
+    document.getElementById("cbimage18").style.display = "flex";
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction2() {
+    document.getElementById("cbimage2").style.display = "none";
+    document.getElementById("cbimage3").style.display = "flex";
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction3() {
+    document.getElementById("cbimage10").style.display = "none";
+    document.getElementById("cbimage11").style.display= "flex";
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction4() {
+    document.getElementById("cbimage18").style.display = "none";
+    document.getElementById("cbimage19").style.display = "flex";
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction5() {
+    document.getElementById("cbimage3").style.display = "none";
+    document.getElementById("cbimage4").style.display = "flex";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction6() {
+    document.getElementById("cbimage11").style.display = "none";
+    document.getElementById("cbimage12").style.display = "flex";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction7() {
+    document.getElementById("cbimage19").style.display = "none";
+    document.getElementById("cbimage20").style.display = "flex";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction8() {
+    document.getElementById("cbimage4").style.display = "none";
+    document.getElementById("cbimage5").style.display = "flex";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction9() {
+    document.getElementById("cbimage12").style.display = "none";
+    document.getElementById("cbimage13").style.display = "flex";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction10() {
+    document.getElementById("cbimage20").style.display = "none";
+    document.getElementById("cbimage21").style.display = "flex";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction11() {
+    document.getElementById("cbimage5").style.display = "none";
+    document.getElementById("cbimage6").style.display = "flex";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction12() {
+    document.getElementById("cbimage13").style.display = "none";
+    document.getElementById("cbimage14").style.display = "flex";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction13() {
+    document.getElementById("cbimage21").style.display = "none";
+    document.getElementById("cbimage22").style.display = "flex";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction14() {
+    document.getElementById("cbimage6").style.display = "none";
+    document.getElementById("cbimage7").style.display = "flex";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction15() {
+    document.getElementById("cbimage14").style.display = "none";
+    document.getElementById("cbimage15").style.display = "flex";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction16() {
+    document.getElementById("cbimage22").style.display = "none";
+    document.getElementById("cbimage23").style.display = "flex";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction17() {
+    document.getElementById("cbimage7").style.display = "none";
+    document.getElementById("cbimage8").style.display = "flex";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction18() {
+    document.getElementById("cbimage15").style.display = "none";
+    document.getElementById("cbimage16").style.display = "flex";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction19() {
+    document.getElementById("cbimage23").style.display = "none";
+    document.getElementById("cbimage24").style.display = "flex";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction20() {
+    document.getElementById("cbimage8").style.display = "none";
+    document.getElementById("cbimage1").style.display = "flex";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction21() {
+    document.getElementById("cbimage16").style.display = "none";
+    document.getElementById("cbimage9").style.display = "flex";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunction22() {
+    document.getElementById("cbimage24").style.display = "none";
+    document.getElementById("cbimage17").style.display = "flex";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+  }
+  function cardBrowseFunctionAlternate1() {
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage2").style.display = "none";
+    document.getElementById("cbimage3").style.display = "none";
+    document.getElementById("cbimage4").style.display = "none";
+    document.getElementById("cbimage5").style.display = "none";
+    document.getElementById("cbimage6").style.display = "none";
+    document.getElementById("cbimage7").style.display = "none";
+    document.getElementById("cbimage8").style.display = "none";
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage1").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate2() {
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage1").style.display = "none";
+    document.getElementById("cbimage3").style.display = "none";
+    document.getElementById("cbimage4").style.display = "none";
+    document.getElementById("cbimage5").style.display = "none";
+    document.getElementById("cbimage6").style.display = "none";
+    document.getElementById("cbimage7").style.display = "none";
+    document.getElementById("cbimage8").style.display = "none";
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage2").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate3() {
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage1").style.display = "none";
+    document.getElementById("cbimage2").style.display = "none";
+    document.getElementById("cbimage4").style.display = "none";
+    document.getElementById("cbimage5").style.display = "none";
+    document.getElementById("cbimage6").style.display = "none";
+    document.getElementById("cbimage7").style.display = "none";
+    document.getElementById("cbimage8").style.display = "none";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage3").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate4() {
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage1").style.display = "none";
+    document.getElementById("cbimage2").style.display = "none";
+    document.getElementById("cbimage3").style.display = "none";
+    document.getElementById("cbimage5").style.display = "none";
+    document.getElementById("cbimage6").style.display = "none";
+    document.getElementById("cbimage7").style.display = "none";
+    document.getElementById("cbimage8").style.display = "none";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage4").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate5() {
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage1").style.display = "none";
+    document.getElementById("cbimage2").style.display = "none";
+    document.getElementById("cbimage3").style.display = "none";
+    document.getElementById("cbimage4").style.display = "none";
+    document.getElementById("cbimage6").style.display = "none";
+    document.getElementById("cbimage7").style.display = "none";
+    document.getElementById("cbimage8").style.display = "none";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage5").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate6() {
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage1").style.display = "none";
+    document.getElementById("cbimage2").style.display = "none";
+    document.getElementById("cbimage3").style.display = "none";
+    document.getElementById("cbimage4").style.display = "none";
+    document.getElementById("cbimage5").style.display = "none";
+    document.getElementById("cbimage7").style.display = "none";
+    document.getElementById("cbimage8").style.display = "none";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage6").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate7() {
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage1").style.display = "none";
+    document.getElementById("cbimage2").style.display = "none";
+    document.getElementById("cbimage3").style.display = "none";
+    document.getElementById("cbimage4").style.display = "none";
+    document.getElementById("cbimage5").style.display = "none";
+    document.getElementById("cbimage6").style.display = "none";
+    document.getElementById("cbimage8").style.display = "none";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage7").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate8() {
+    document.getElementById("cbi1").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi2").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi3").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi4").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi5").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi6").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi7").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage1").style.display = "none";
+    document.getElementById("cbimage2").style.display = "none";
+    document.getElementById("cbimage3").style.display = "none";
+    document.getElementById("cbimage4").style.display = "none";
+    document.getElementById("cbimage5").style.display = "none";
+    document.getElementById("cbimage6").style.display = "none";
+    document.getElementById("cbimage7").style.display = "none";
+    document.getElementById("cbi8").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage8").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate9() {
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage10").style.display = "none";
+    document.getElementById("cbimage11").style.display = "none";
+    document.getElementById("cbimage12").style.display = "none";
+    document.getElementById("cbimage13").style.display = "none";
+    document.getElementById("cbimage14").style.display = "none";
+    document.getElementById("cbimage15").style.display = "none";
+    document.getElementById("cbimage16").style.display = "none";
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage9").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate10() {
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage9").style.display = "none";
+    document.getElementById("cbimage11").style.display = "none";
+    document.getElementById("cbimage12").style.display = "none";
+    document.getElementById("cbimage13").style.display = "none";
+    document.getElementById("cbimage14").style.display = "none";
+    document.getElementById("cbimage15").style.display = "none";
+    document.getElementById("cbimage16").style.display = "none";
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage10").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate11() {
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage9").style.display = "none";
+    document.getElementById("cbimage10").style.display = "none";
+    document.getElementById("cbimage12").style.display = "none";
+    document.getElementById("cbimage13").style.display = "none";
+    document.getElementById("cbimage14").style.display = "none";
+    document.getElementById("cbimage15").style.display = "none";
+    document.getElementById("cbimage16").style.display = "none";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage11").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate12() {
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage9").style.display = "none";
+    document.getElementById("cbimage10").style.display = "none";
+    document.getElementById("cbimage11").style.display = "none";
+    document.getElementById("cbimage13").style.display = "none";
+    document.getElementById("cbimage14").style.display = "none";
+    document.getElementById("cbimage15").style.display = "none";
+    document.getElementById("cbimage16").style.display = "none";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage12").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate13() {
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage9").style.display = "none";
+    document.getElementById("cbimage10").style.display = "none";
+    document.getElementById("cbimage11").style.display = "none";
+    document.getElementById("cbimage12").style.display = "none";
+    document.getElementById("cbimage14").style.display = "none";
+    document.getElementById("cbimage15").style.display = "none";
+    document.getElementById("cbimage16").style.display = "none";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage13").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate14() {
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage9").style.display = "none";
+    document.getElementById("cbimage10").style.display = "none";
+    document.getElementById("cbimage11").style.display = "none";
+    document.getElementById("cbimage12").style.display = "none";
+    document.getElementById("cbimage13").style.display = "none";
+    document.getElementById("cbimage15").style.display = "none";
+    document.getElementById("cbimage16").style.display = "none";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage14").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate15() {
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage9").style.display = "none";
+    document.getElementById("cbimage10").style.display = "none";
+    document.getElementById("cbimage11").style.display = "none";
+    document.getElementById("cbimage12").style.display = "none";
+    document.getElementById("cbimage13").style.display = "none";
+    document.getElementById("cbimage14").style.display = "none";
+    document.getElementById("cbimage16").style.display = "none";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage15").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate16() {
+    document.getElementById("cbi9").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi10").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi11").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi12").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi13").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi14").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi15").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage9").style.display = "none";
+    document.getElementById("cbimage10").style.display = "none";
+    document.getElementById("cbimage11").style.display = "none";
+    document.getElementById("cbimage12").style.display = "none";
+    document.getElementById("cbimage13").style.display = "none";
+    document.getElementById("cbimage14").style.display = "none";
+    document.getElementById("cbimage15").style.display = "none";
+    document.getElementById("cbi16").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage16").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate17() {
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage18").style.display = "none";
+    document.getElementById("cbimage19").style.display = "none";
+    document.getElementById("cbimage20").style.display = "none";
+    document.getElementById("cbimage21").style.display = "none";
+    document.getElementById("cbimage22").style.display = "none";
+    document.getElementById("cbimage23").style.display = "none";
+    document.getElementById("cbimage24").style.display = "none";
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage17").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate18() {
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage17").style.display = "none";
+    document.getElementById("cbimage19").style.display = "none";
+    document.getElementById("cbimage20").style.display = "none";
+    document.getElementById("cbimage21").style.display = "none";
+    document.getElementById("cbimage22").style.display = "none";
+    document.getElementById("cbimage23").style.display = "none";
+    document.getElementById("cbimage24").style.display = "none";
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage18").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate19() {
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage17").style.display = "none";
+    document.getElementById("cbimage18").style.display = "none";
+    document.getElementById("cbimage20").style.display = "none";
+    document.getElementById("cbimage21").style.display = "none";
+    document.getElementById("cbimage22").style.display = "none";
+    document.getElementById("cbimage23").style.display = "none";
+    document.getElementById("cbimage24").style.display = "none";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage19").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate20() {
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage17").style.display = "none";
+    document.getElementById("cbimage18").style.display = "none";
+    document.getElementById("cbimage19").style.display = "none";
+    document.getElementById("cbimage21").style.display = "none";
+    document.getElementById("cbimage22").style.display = "none";
+    document.getElementById("cbimage23").style.display = "none";
+    document.getElementById("cbimage24").style.display = "none";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage20").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate21() {
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage17").style.display = "none";
+    document.getElementById("cbimage18").style.display = "none";
+    document.getElementById("cbimage19").style.display = "none";
+    document.getElementById("cbimage20").style.display = "none";
+    document.getElementById("cbimage22").style.display = "none";
+    document.getElementById("cbimage23").style.display = "none";
+    document.getElementById("cbimage24").style.display = "none";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage21").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate22() {
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage17").style.display = "none";
+    document.getElementById("cbimage18").style.display = "none";
+    document.getElementById("cbimage19").style.display = "none";
+    document.getElementById("cbimage20").style.display = "none";
+    document.getElementById("cbimage21").style.display = "none";
+    document.getElementById("cbimage23").style.display = "none";
+    document.getElementById("cbimage24").style.display = "none";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage22").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate23() {
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage17").style.display = "none";
+    document.getElementById("cbimage18").style.display = "none";
+    document.getElementById("cbimage19").style.display = "none";
+    document.getElementById("cbimage20").style.display = "none";
+    document.getElementById("cbimage21").style.display = "none";
+    document.getElementById("cbimage22").style.display = "none";
+    document.getElementById("cbimage24").style.display = "none";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage23").style.display = "flex";
+  }
+  function cardBrowseFunctionAlternate24() {
+    document.getElementById("cbi17").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi18").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi19").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi20").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi21").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi22").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbi23").style.backgroundImage = "linear-gradient(to right, #c0c0c0, #c0c0c0, #fffde6)";
+    document.getElementById("cbimage17").style.display = "none";
+    document.getElementById("cbimage18").style.display = "none";
+    document.getElementById("cbimage19").style.display = "none";
+    document.getElementById("cbimage20").style.display = "none";
+    document.getElementById("cbimage21").style.display = "none";
+    document.getElementById("cbimage22").style.display = "none";
+    document.getElementById("cbimage23").style.display = "none";
+    document.getElementById("cbi24").style.backgroundImage = "linear-gradient(to right, #ff3300, #ff7700)";
+    document.getElementById("cbimage24").style.display = "flex";
+  }
+  function googlePlayStoreNavigation() {
+    window.location.href = "https://play.google.com/store/apps/details?id=com.google.android.youtube";
+  }
+  function appStoreNavigation() {
+    window.location.href = "https://apps.apple.com/us/app/youtube-watch-listen-stream/id544007664";
+  }
+  function instagramNavigation() {
+    window.location.href = "https://www.instagram.com/trine.app/";
+  }
+  function facebookNavigation() {
+    window.location.href = "https://www.facebook.com/Trine-102694105333411";
+  }
+  function twitterNavigation() {
+    window.location.href = "https://twitter.com/trine_app";
+  }
+  function pinterestNavigation() {
+    window.location.href = "https://www.pinterest.ca/trine_app/";
+  }
+  function tumblrNavigation() {
+    window.location.href = "https://www.tumblr.com/blog/trineapp"
+  }
+  var preRegistrationCountDown = new Date("Dec 23, 2022 15:00:00").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = preRegistrationCountDown - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("preRegistrationCountDown").innerHTML = " " + days + ":" + hours + ":"
+    + minutes + ":" + seconds + "";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("preRegistrationCountDown").innerHTML = "GO TIME";
+    }
+  }, 1000);
+  var fullReleaseCountDown = new Date("Mar 23, 2023 15:00:00").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = fullReleaseCountDown - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("fullReleaseCountDown").innerHTML = " " + days + ":" + hours + ":"
+    + minutes + ":" + seconds + "";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("fullReleaseCountDown").innerHTML = "GO TIME";
+    }
+  }, 1000);
+  </script>
+</html>
