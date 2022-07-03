@@ -742,7 +742,7 @@
         <a href="our-app.html">Our App</a>
         <a href="about.html">About</a>
         <a href="the-synastry-compendium.html">The Synastry Compendium</a>
-        <a href="memberships.html">Memberships</a>
+        <a href="memberships.html" style="text-shadow: 0px 0px 15px #ffffff;">Memberships</a>
         <a href="charts.html">Charts</a>
         <a href="reports.html">Reports</a>
         <a href="media.html">Media</a>
